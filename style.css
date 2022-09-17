@@ -15,28 +15,62 @@
 
 
     * {
-        /* cursor: url(arrow/arrow.svg),auto; */
         cursor: url(arrow/gray24.png),auto;
         padding: 0;
         margin: 0;
         box-sizing: border-box; 
     }
 
+    html {
+        scroll-behavior: smooth;
+    }
+
     a{
-        /* cursor: url(arrow/hand26.png),auto;  */
         text-decoration: none;
-        /* color: white; */
     }
     ::-webkit-scrollbar {
         display: none;
     }
 
 
+
+/* =====scroll bar======= */
+    .header {
+        position: fixed;
+        top: 0;
+        z-index: 1;
+        width: 100%;
+    }
+
+    .progress-bar {
+        height: 10px;
+        background: #001C55;
+        width: 0%;
+    }
+
+
+
+/* ========smooth scroll up========== */
+    .reveal{
+        position: relative;
+        transform: translateY(150px);
+        opacity: 0;
+        transition: 1s all ease;
+    }
+      
+    .reveal.active{
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+
+
     /* ====================== css for box0 ========================= */
     /* ====================== css for box0 ========================= */
 
     .box0{
-        padding: 30px;
+        /* background-color: #E0E0E0; */
+        padding: 0 30px;
         font-family: 'Exo Space';
         /* font-family: 'CYBORG'; */
     }
@@ -45,7 +79,8 @@
         width: fit-content;
         margin: auto;
         text-align: center;
-        margin-bottom: 40px;
+        margin-bottom: 30px;
+        padding-top: 20px;
     }
     .box01>h1{
         padding: 5px;
@@ -86,7 +121,7 @@
     }
     .tab-title{
         display: flex;
-        margin: 20px 0 40px;
+        margin: 20px 0 20px;
     }
     .tab-title>p{
         font-weight: bold;
@@ -98,6 +133,9 @@
         cursor: url(arrow/h30.png),auto;
         position: relative;
     }
+    .tab-links:hover{
+        color: #72351C;
+    }
     .tab-links::after{
         content: '';
         width: 0;
@@ -106,7 +144,10 @@
         position: absolute;
         left: 0;
         bottom: -8px;
-        transition: 0.7s;
+        transition: 0.7s; 
+    }
+    .active-link{
+        color: #72351C;
     }
     .tab-links.active-link::after{
         width: 100%;
@@ -129,7 +170,7 @@
     }
     .tab-contents ul li .co{
         color: #001C55;
-        font-size: 14px;
+        font-size: 15px;
         letter-spacing: 1px;
     }
     
@@ -138,12 +179,6 @@
         grid-template-columns: repeat(auto-fill,minmax(310px,1fr));
     }
     
-
-
-
-
-
-
 
 
     /* ====================== css for box1 ========================= */
@@ -156,9 +191,9 @@
     }
 
     .box10 {
-        padding-top: 50px;
+        padding-top: 20px;
         -webkit-box-reflect: below -20px linear-gradient(transparent, rgba(0,0,0,.2));
-        font-size: 40px;
+        font-size: 35px;
     }
 
     .box10 span {
@@ -183,7 +218,7 @@
 
     .box11{
         display: flex;
-        margin-top: 40px;
+        margin-top: 10px;
     }
 
     .box111{
@@ -206,23 +241,21 @@
     }
 
     .btn_div{
-        width: 150px ;
+        width: fit-content;
         margin: auto;
     }
 
     .rbtn{
         font-family: 'CYBORG';
-        padding: .6rem 1.5rem; 
+        padding: 5px 10px; 
         font-size: 18px;
         background-color: #001C55;    
         border: none;
         border-radius: 7px;
         box-shadow: 9px 7px 32px -11px #72351C;
-        font-size: 1.5rem;
-        font-weight: 900;   
         transition: all .3s ease-in-out 0s; 
         margin-top: 20px;  
-        transform: rotate(-3.6deg);           
+        transform: rotate(-3.6deg);          
     }
 
     .rbtn:hover{
@@ -248,8 +281,6 @@
         /* font-family: 'CYBORG'; */
         font-family: 'Exo Space';
         margin-top: 0;
-
-        padding-top: 30px;
         padding-bottom: 30px;
         
     }
@@ -257,31 +288,26 @@
         width: fit-content;
         margin: auto;
         text-align: center;
+        padding-top: 20px;
     }
 
     .box21>h1{
         transform: rotate(-3.6deg);
         border-radius: 12px;
         padding: 0 10px;
-        /* color: #535461;
-        border: 4px solid #535461; */
         color: #001C55;
         border: 4px solid #001C55;
-
-        /* text-shadow: 3px 3px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; */
     }
 
     .box22{
         width: 70%;
         margin: auto;
-        margin-top: 50px;
+        margin-top: 40px;
         background-color: #001C55;
         border: 1px solid #989292;
         box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
         border-radius: 12px;
-        /* color: white; */
         
-
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
@@ -352,12 +378,6 @@
       }
       
       
-
-
-
-
-    
-
 
 
 
@@ -533,7 +553,7 @@
         color: #001C55;
     }
     .box41{
-        width: 190px;
+        width: fit-content;
         margin: auto;
         text-align: center;  
     }
@@ -555,8 +575,7 @@
     .skills-list div{
         background : #E0E0E0;
         padding: 40px;
-        font-size: 13px;
-        font-weight: 300;
+        font-size: 15px;
         border-radius: 10px;
         transition: background 0.5s,transform 0.5s;
     }
@@ -578,9 +597,93 @@
 
 
 
-
+/* ====================== css for box5 ========================= */
+/* ====================== css for box5 ========================= */
     .box5{
-        height: 400px;
+        font-family: 'Exo Space';
+        width: 100%;
+        /* margin: auto; */
+        padding: 20px 40px;
+        background-color: #E0E0E0;
+    }
+    .box51{
+        width: fit-content;
+        margin: auto;
+        /* text-align: center;   */
+    }
+    .box51>h1{
+        padding: 5px;
+        transform: rotate(-3.6deg);
+        border-radius: 12px;
+        color: #001C55;
+        border: 4px solid #001C55;
+        font-weight: bolder;
+    }
+    .box52{
+        display: flex;
+        margin-top: 10px;
+    }
+    .box511{
+        padding: 30px;
+    }
+    .box5111{
+        margin-top: 10px;
+        /* text-align: center; */
+    }
+    .box5112{
+        display: flex; 
+        gap: 20px;
+        margin-top: 20px;
+        /* justify-content: center; */
+    }
+    .ico>a>i{
+        color: white;
+        padding: 10px;
+        background: #001C55;
+        border-radius: 50%;
+      }
+
+      .box512{
+        text-align: center;
+        margin: auto;
+      }
+
+    .img51{
+        max-width: 200px;
+        max-height: 200px;
+        border-radius: 50%;
+        border: 4px solid #72351C;
+    }
+    .box5h1{
+        color: #001C55;
+        font-size: 35px;
+        /* text-align: center; */
+    }
+    .box5h3{
+        color: #535461;
+        margin-top: 20px;
+    }
+
+
+
+    
+/* ====================== css for box6 ========================= */
+
+    .box6{
+        font-family: 'Exo Space';
+        padding: 20px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background: #535461;
+        color: white;
+        font-size: 20px;
+        line-height: 1.2;
+    }
+    .fa-sharp{
+        color: red;
     }
 
 
@@ -627,6 +730,24 @@
         .flip-card{
             width: 350px;
         }
+
+        .box01>h1, .box21>h1, .box31>h1, .box41>h1{
+            font-size: 20px;
+        }
+        .box01{
+            margin-bottom: 0;
+        }
+        .box6{
+            font-size: 16px;
+        }
+        .box52{
+            flex-direction:column-reverse;
+        }
+        .box511 {
+            padding: 0px;
+            margin-top: 17px;
+        }
+
     }
 
     @media screen and (min-width: 400px) and (max-width: 520px) { 
@@ -664,7 +785,24 @@
         .box3{
             padding: 5px;
         }
+        .box6{
+            font-size: 18px;
+        }
+        .box52{
+            flex-direction:column-reverse;
+        }
+        .box511 {
+            padding: 0px;
+            margin-top: 17px;
+        }
 
+    }
+
+    .arrup{
+        position: fixed; 
+        bottom: 20px; 
+        right: 30px; 
+        color: #72351C;
     }
 
     @media screen and (min-width: 521px) and (max-width: 730px){
@@ -693,6 +831,9 @@
         }
         .box22{
             width: 85%;
+        }
+        .box52{
+            flex-direction:column-reverse;
         }
 
     }
