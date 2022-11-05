@@ -493,6 +493,12 @@
         background: #001C55;
         border-radius: 50%;
       }
+      #git_link>i{
+        color: white;
+        padding: 10px 10px;
+        background: #001C55;
+        border-radius: 50%;
+      }
       .icons{
         margin-top: 10px;
         display: flex;
@@ -840,6 +846,20 @@
     .box8{
         margin-top: 20px;
         padding: 20px;
+    }
+
+    .github_stat{
+        width: 99%;
+        margin: auto;
+        margin-top: 20px;
+        text-align: center;
+        align-items: center;
+    }
+    .github_stat>img{
+        max-width: 100%;
+    }
+    .box8>.calendar>.contrib-column{
+        display: none;
     }
 
         
