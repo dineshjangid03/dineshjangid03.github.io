@@ -489,6 +489,10 @@
         padding: 15px;
       }
 
+      .flip-card-back> p:nth-child(3){
+        font-weight: bolder;
+      }
+
       .icons>a>i{
         color: white;
         padding: 10px 10px;
