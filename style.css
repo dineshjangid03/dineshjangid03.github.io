@@ -826,7 +826,6 @@
     .box8>.calendar{
         min-height: auto;
         max-height: auto;
-        /* font-family: 'Exo Space'; */
     }
     .js-calendar-graph-svg{
         padding: 0 20px;
